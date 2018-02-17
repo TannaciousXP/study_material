@@ -151,6 +151,16 @@
       };
     }
 
+    const sliderImages = document.querySelectorAll('.slide-in');
+    
+    function checkSlide(e) {
+      // Can ustilize window.scrollY to get how many pixels we are scroll downa t
+      sliderImages.forEach(slideImage => {
+
+      });
+    }
+
+    window.addEventListener('scroll', debounce(checkSlide));
   </script>
 
   <style>
