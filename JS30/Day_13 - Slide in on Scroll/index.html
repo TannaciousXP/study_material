@@ -155,7 +155,20 @@
     
     function checkSlide(e) {
       // Can ustilize window.scrollY to get how many pixels we are scroll downa t
-      sliderImages.forEach(slideImage => {
+      sliderImages.forEach(sliderImage => {
+        // half way through the image
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPasted = window.scrollY < imageBottom;
+
+        if (isHalfShown && isNotScrolledPasted) {
+          sliderImage.classList.add('active');
+        } else {
+          sliderImage.classList.remove('active');
+        }
 
       });
     }
