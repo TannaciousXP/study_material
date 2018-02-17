@@ -1,0 +1,11 @@
+# Key Sequence Detection
+
+```
+pressed.splice(-secretCode.length , pressed.length - secretCode.length);
+
+or
+
+pressed.splice(0, pressed.length - secretCode.length);
+```
+
+We can trim the array whenever the function is called. The splice up top only splice with there are 6 elements in the array.
