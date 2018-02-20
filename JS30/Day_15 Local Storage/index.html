@@ -80,6 +80,22 @@
       localStorage.setItem('items', JSON.stringify(items));
       // populateList(items, itemsList);
     }
+    
+    // Animate function tells animate back to it's original position.
+      // document.querySelector("svg").animate([
+      //     // keyframes
+      //     { transform: 'translateY(0px)' },
+      //     { transform: 'translateX(300px)' },
+      //     { transform: 'translateY(-300px)' },
+      //     { transform: 'translateY(600px)' },
+      //     { transform: 'translateX(-300px)' },
+      //     { transform: 'translateX(0px)' }
+
+      //   ], {
+      //       // timing options
+      //       duration: 5000,
+      //       iterations: Infinity
+      //     });
 
     addItems.addEventListener('submit', addItem);
     itemsList.addEventListener('click', toggleDone);
