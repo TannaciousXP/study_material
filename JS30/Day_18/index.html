@@ -184,6 +184,29 @@
     </li>
   </ul>
   <script>
+    const listVideos = [...document.querySelectorAll('[data-time]')];
+    // const seconds = listVideos
+    //                 .map(node => node.dataset.time)
+    //                 .map(timeCode => {
+    //                   const [mins, secs] = timeCode.split(':').map(parseFloat);
+    //                   return (mins * 60) + secs;
+    //                 })
+    //                 .reduce((sum, secs) => sum + secs);
+    const seconds = listVideos.reduce((sum, node) => {
+      let [mins, secs] = node.dataset.time.split(':').map(parseFloat);
+      secs = (mins * 60) + secs;
+      return sum + secs;
+    }, 0);
+
+
+    let secondsLeft = seconds;
+    const hours = Math.floor(secondsLeft / 3600);
+    secondsLeft = secondsLeft % 3600;
+    
+    const mins = Math.floor(secondsLeft / 60);
+    secondsLeft = secondsLeft % 60;
+    console.log(hours, mins, secondsLeft);
+
   </script>
 </body>
 
